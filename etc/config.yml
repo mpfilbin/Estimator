@@ -1,0 +1,6 @@
+fibonnaci_squence_count: 12
+risk_multipliers:
+  small: 0.5
+  medium: 1.5
+  large:  3.0
+  extra_large: 5.0
