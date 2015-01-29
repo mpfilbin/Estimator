@@ -9,7 +9,6 @@ module Estimator
       n < 2 ? n : (calculate(n - 1) + calculate(n - 2))
     end
 
-
     # @param [Integer] n
     # @return [Boolean] True if the number is a valid fibonnaci number within the calculated sqeuence
     # A positive integer ω is a Fibonacci number if and only if one of 5ω2 + 4 and 5ω2 - 4 is a perfect square.
@@ -25,13 +24,16 @@ module Estimator
     # @param [Integer] n - A candidate fibonnaci number
     # @return [Integer] The closest fibonnaci number in the calculated sequence
     def self.closest(n)
-      if valid? n
-        n
-      else
-        n.downto 0 do |candidate|
-          candidate if valid? candidate
-        end
+      closest = 0
+
+      n.downto 0 do |candidate|
+        closest = candidate
+        break if valid? candidate
       end
+
+      closest
     end
+
   end
+
 end
